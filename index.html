@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Catch the Clean Water - Charity: Water Game</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+  <header id="game-dashboard" aria-label="Game Dashboard">
+    <div class="dashboard-info">
+      <span id="score-label">Score: <span id="score-value">0</span></span>
+      <span id="timer-label">Time: <span id="timer-value">30</span>s</span>
+    </div>
+    <button id="reset-game" type="button" aria-label="Reset Game">Reset Game</button>
+  </header>
+
+  <main id="game-board" aria-label="Game Board">
+    <div class="grid">
+      <div class="hole" id="hole-1" tabindex="0" aria-label="Drop zone 1"></div>
+      <div class="hole" id="hole-2" tabindex="0" aria-label="Drop zone 2"></div>
+      <div class="hole" id="hole-3" tabindex="0" aria-label="Drop zone 3"></div>
+      <div class="hole" id="hole-4" tabindex="0" aria-label="Drop zone 4"></div>
+      <div class="hole" id="hole-5" tabindex="0" aria-label="Drop zone 5"></div>
+      <div class="hole" id="hole-6" tabindex="0" aria-label="Drop zone 6"></div>
+      <div class="hole" id="hole-7" tabindex="0" aria-label="Drop zone 7"></div>
+      <div class="hole" id="hole-8" tabindex="0" aria-label="Drop zone 8"></div>
+      <div class="hole" id="hole-9" tabindex="0" aria-label="Drop zone 9"></div>
+    </div>
+  </main>
+
+  <section id="endgame-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="endgame-message" aria-hidden="true">
+    <div class="modal-content">
+      <h2 id="endgame-message">Game Over!</h2>
+      <p>Your final score: <span id="final-score">0</span></p>
+      <button id="play-again" type="button" aria-label="Play Again">Play Again</button>
+    </div>
+  </section>
+  
+  <script src="game.js"></script>
+</body>
+</html>
