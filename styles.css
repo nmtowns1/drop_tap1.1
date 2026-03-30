@@ -3,6 +3,9 @@
    charity: water aesthetic
    ======================================== */
 
+/* ----- GOOGLE FONTS IMPORT ----- */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+
 /* ----- CSS RESET & BASE STYLES ----- */
 * {
   margin: 0;
@@ -11,7 +14,7 @@
 }
 
 body {
-  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'Proxima Nova', 'Avenir', 'Montserrat', sans-serif;
   background-color: #FFC907;
   color: #222222;
   min-height: 100vh;
@@ -21,12 +24,33 @@ body {
   padding: 20px;
 }
 
+/* ----- TYPOGRAPHY STYLES ----- */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Proxima Nova', 'Avenir', 'Montserrat', sans-serif;
+  color: #222222;
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  font-weight: 800;
+}
+
+h2 {
+  font-weight: 800;
+}
+
+p {
+  font-family: 'Proxima Nova', 'Avenir', 'Montserrat', sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
 /* ----- GAME DASHBOARD ----- */
 #game-dashboard {
   width: 100%;
   max-width: 600px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   padding: 20px;
   margin-bottom: 30px;
@@ -59,6 +83,7 @@ body {
 
 /* ----- BUTTONS ----- */
 button {
+  font-family: 'Proxima Nova', 'Avenir', 'Montserrat', sans-serif;
   padding: 12px 24px;
   background-color: #222222;
   color: #FFFFFF;
@@ -98,6 +123,20 @@ button:active {
   grid-template-rows: repeat(3, 1fr);
   gap: 15px;
   aspect-ratio: 1 / 1;
+}
+
+/* ----- RESET BUTTON CONTAINER ----- */
+#reset-button-container {
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#reset-button-container button {
+  min-width: 150px;
 }
 
 /* ----- GAME ENTITIES ----- */
@@ -240,14 +279,15 @@ button:active {
   font-size: 2rem;
   margin-bottom: 20px;
   color: #222222;
-  font-weight: 700;
+  font-weight: 800;
+  letter-spacing: -0.02em;
 }
 
 .modal-content p {
   font-size: 1.3rem;
   margin-bottom: 30px;
   color: #222222;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 #final-score {
@@ -295,7 +335,103 @@ button:active {
   }
 }
 
+/* ----- START SCREEN ----- */
+#start-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #FFC907;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Proxima Nova', 'Avenir', 'Montserrat', sans-serif;
+  color: #222222;
+  text-align: center;
+}
+
+#start-screen h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+}
+
+#start-screen p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  max-width: 500px;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+.difficulty-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.difficulty-buttons button {
+  font-family: 'Proxima Nova', 'Avenir', 'Montserrat', sans-serif;
+  background: #fff;
+  color: #222222;
+  border: none;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  padding: 0.75em 2em;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+  box-shadow: 0 2px 8px rgba(34, 34, 34, 0.08);
+}
+
+.difficulty-buttons button:hover {
+  background: #222222;
+  color: #FFC907;
+  transform: translateY(-2px) scale(1.05);
+}
+
+.difficulty-buttons button:active {
+  transform: translateY(0) scale(1);
+}
+
+/* ----- RESPONSIVE DESIGN ----- */
+@media screen and (max-width: 768px) {
+  #start-screen h1 {
+    font-size: 2rem;
+  }
+
+  #start-screen p {
+    font-size: 1rem;
+    padding: 0 20px;
+  }
+
+  .difficulty-buttons button {
+    font-size: 1rem;
+    padding: 0.6em 1.5em;
+  }
+}
+
 @media screen and (max-width: 480px) {
+  #start-screen h1 {
+    font-size: 1.6rem;
+  }
+
+  .difficulty-buttons {
+    flex-direction: column;
+    width: 100%;
+    padding: 0 20px;
+  }
+
+  .difficulty-buttons button {
+    width: 100%;
+    max-width: 300px;
+  }
+
   .dashboard-info {
     flex-direction: column;
     gap: 10px;
@@ -306,11 +442,55 @@ button:active {
     width: 100%;
   }
 
+  #reset-button-container button {
+    max-width: 300px;
+  }
+
   .grid {
     gap: 8px;
   }
 
   .modal-content {
     padding: 25px 30px;
+  }
+}
+
+/* ----- FOOTER ----- */
+#game-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 15px 20px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #222222;
+  border-top: 2px solid #FFC907;
+  z-index: 500;
+  backdrop-filter: blur(5px);
+}
+
+#game-footer p {
+  margin: 0;
+  font-weight: 500;
+}
+
+#game-footer a {
+  color: #00AEEF;
+  text-decoration: none;
+  font-weight: 700;
+  transition: color 0.2s ease;
+}
+
+#game-footer a:hover {
+  color: #FFC907;
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 480px) {
+  #game-footer {
+    font-size: 0.8rem;
+    padding: 12px 15px;
   }
 }
