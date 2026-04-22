@@ -180,7 +180,7 @@ button:active {
   position: absolute;
   width: 80%;
   height: 80%;
-  background: radial-gradient(circle at 30% 30%, #A67C52, #8B5A2B);
+  background: radial-gradient(circle at 30% 30%, #5b4026, #8B5A2B);
   border-radius: 50%;
   animation: pop-in 0.2s ease-out;
   box-shadow: 0 4px 12px rgba(139, 90, 43, 0.6);
